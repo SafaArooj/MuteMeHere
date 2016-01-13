@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <PreferenceCategory android:title="Select Just One Mode"
+        android:summary="Select One">
+
+        <CheckBoxPreference android:key="silent_pref"
+            android:title="Silent"
+            android:summary="Phone will not vibrate"
+            android:defaultValue="false" />
+
+    <CheckBoxPreference android:key="vibrate_pref"
+        android:title="Vibrate"
+        android:summary="Vibrate on an incoming call"
+        android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Notifications">
+    <CheckBoxPreference android:key="LED_pref"
+        android:title="Pulse Light"
+        android:summary="Blink light on notifications"
+        android:defaultValue="true" />
+
+    <CheckBoxPreference android:key="noti_vibrate_pref"
+        android:title="Vibrate"
+        android:summary="Vibrate on notifications"
+        android:defaultValue="true" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

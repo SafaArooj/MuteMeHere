@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="300dp"
+    android:minHeight="300dp"
+    android:minWidth="700dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/label_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Address:"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:layout_alignBaseline="@+id/tv_location_value"
+            android:layout_alignBottom="@+id/tv_location_value"
+            />
+
+        <TextView
+            android:id="@+id/tv_location_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#6495ED"
+            android:layout_marginTop="16dp"
+            android:text="location will be added"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+        <TextView
+            android:id="@+id/label_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_below="@+id/label_location"
+            android:text="Latitude :"
+            android:layout_marginTop="16dp"
+
+            android:layout_alignBaseline="@+id/tv_latitude_value"
+            android:layout_alignBottom="@+id/tv_latitude_value"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_latitude_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#6495ED"
+            android:layout_below="@+id/tv_location_value"
+            android:text="latitude*"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentEnd="true"
+            />
+
+        <TextView
+            android:id="@+id/label_longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_below="@+id/label_latitude"
+            android:text="Longitude :"
+            android:layout_marginTop="16dp"
+
+            android:layout_alignBaseline="@+id/tv_longitude_value"
+            android:layout_alignBottom="@+id/tv_longitude_value"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_longitude_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#6495ED"
+            android:layout_below="@+id/tv_latitude_value"
+            android:text="longitude*"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            />
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#D3D3D3"
+            android:layout_below="@+id/tv_longitude_value" />
+
+        <TextView
+            android:id="@+id/label_radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_below="@+id/label_latitude"
+            android:text="Radius :"
+            android:layout_marginTop="16dp"
+
+            android:layout_alignBaseline="@+id/et_radius_value"
+            android:layout_alignBottom="@+id/et_radius_value"
+
+            />
+
+        <EditText
+            android:id="@+id/et_radius_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#6495ED"
+            android:layout_below="@+id/tv_longitude_value"
+            android:hint="radius"
+            android:inputType="number"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentEnd="true"
+            />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp">
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Geofence"
+            android:id="@+id/btn_ViewGeofence"
+            />
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/btn_Submit"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

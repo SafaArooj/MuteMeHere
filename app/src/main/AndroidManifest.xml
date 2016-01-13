@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.com.example.android.mutemehere" >
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATOR" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Mute Me Here"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="Mute Me Here" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TimeSpanActivity"
+            android:label="Time Based Muting"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="muteMeHere" />
+        <activity
+            android:name=".TimeSpanListActivity"
+            android:label="muteMeHere"
+            android:launchMode="singleTask" />
+
+        <uses android:minSdkVersion="4.4.2" />
+
+        <receiver android:name=".TimeMuteManager"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".TimeUnMuteManager"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".TimeMuteService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <!-- location based muting activities ! -->
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="Location Based Muting" >
+        </activity>
+        <activity android:name=".LocationListActivity" />
+
+        <service
+            android:name=".LocationMuteService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <receiver
+            android:name=".LocationUnMuteManager"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+    </application>
+
+</manifest>
